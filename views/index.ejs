@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>All Chats</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1>All Chats</h1>
+    <div class="chat-container">
+        <% chats.forEach(chat => { %>
+            <div class="chat">
+                <div><span class="from"><%= chat.from %></span> ➜ <span class="to"><%= chat.to %></span></div>
+                <div class="msg">
+                <%= chat.msg %>
+               <div class="button-group">
+                <form method="get" action="chats/<%= chat.id %>/edit">
+                    <button>Edit</button>
+                </form>
+                <form method="POST" action="chats/<%= chat.id %>?_method=DELETE">
+                    <button>Delete</button>
+                </form>
+             </div>
+             </div>
+            <div class="time"><%= chat.created_at.toLocaleString() %></div>
+            </div>
+        <% }) %>
+    </div>
+    <form method="GET" action="/chats/new">
+        <button class="btn">New chat</button>
+    </form>
+</body>
+</html>
