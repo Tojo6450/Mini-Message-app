@@ -39,7 +39,7 @@ app.get("/chats", async (req, res) => {
 app.get("/chats/new", async (req, res) => {
     res.render("new.ejs")
 });
-
+//post new
 app.post("/chats",(req,res)=>{
     let {from,to,msg}=req.body
     const newchat= new Chat({
@@ -54,6 +54,16 @@ app.post("/chats",(req,res)=>{
     res.redirect("/chats");
 })
 
+//show
+// app.get("/chats/:id",async (req,res,next)=>{
+//     let {id}=req.params
+//     let chat = await Chat.findById(id)
+//     if(!chat){
+//         next(new ExpressError(500,"Chat not found"))
+//     }
+//     res.render("edit.ejs",{chat})
+// })
+//update
 app.get("/chats/:id/edit",async (req,res)=>{
     let {id}=req.params
     let chat=await Chat.findById(id)

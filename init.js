@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Chat = require("./Model/chat"); 
 
-mongoose.connect("mongodb://127.0.0.1:27017/whatsapp", {
+ mongoose.connect("mongodb://127.0.0.1:27017/whatsapp", {
 }).then(() => {
     console.log("MongoDB connected");
 }).catch((err) => {

@@ -14,10 +14,10 @@
                 <div class="msg">
                 <%= chat.msg %>
                <div class="button-group">
-                <form method="get" action="chats/<%= chat.id %>/edit">
+                <form method="get" action="/chats/<%= chat.id %>/edit">
                     <button>Edit</button>
                 </form>
-                <form method="POST" action="chats/<%= chat.id %>?_method=DELETE">
+                <form method="POST" action="/chats/<%= chat.id %>?_method=DELETE">
                     <button>Delete</button>
                 </form>
              </div>
